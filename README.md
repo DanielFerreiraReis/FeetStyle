@@ -1,6 +1,3 @@
-# FeetStyle
-Projeto criado para atender o recurso da disciplina "Programação Web" do curso técnico em informática do IFPA campus Tucuruí. Sendo este projeto um sistema logístico para uma loja de sapatos. 
-
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
