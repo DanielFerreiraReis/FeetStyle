@@ -15,7 +15,7 @@ function App() {
       <Routes>
         {/* Rotas públicas */}
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path='/login' element={<TelaDeVendas />} />
+        <Route path='/login' element={<Login/>} />
         <Route path="/unauthorized" element={<h1>Acesso não autorizado</h1>} />
 
         {/* Redirecionamento padrão para login se não autenticado */}
