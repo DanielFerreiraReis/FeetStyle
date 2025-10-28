@@ -3,6 +3,7 @@ import { useAuth } from './context/AuthContext';
 import AdminRoutes from './routes/AdminRoutes';
 import VendedorRoutes from './routes/VendedorRoutes';
 import Login from './pages/public/Login';
+import './index.css'
 // import Home from './pages/public/Home';
 
 function App() {
