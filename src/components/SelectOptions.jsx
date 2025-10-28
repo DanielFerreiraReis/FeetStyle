@@ -1,8 +1,8 @@
-import Inicio from "./components/Inicio";
-import Cadastro from "./components/Cadastro";
-import Movimento from "./components/Movimento";
-import Relatorio from "./components/Relatorio";
-import SideBar from "./SideBar";
+// import Inicio from "../components/Inicio";
+// import Cadastro from "./components/Cadastro";
+// import Movimento from "./components/Movimento";
+// import Relatorio from "./components/Relatorio";
+// import SideBar from "./SideBar";
 
 const SelectOpitions = () => {
     const [page, setPage] = React.useState('Inicio');
