@@ -4,6 +4,7 @@ import AdminRoutes from './routes/AdminRoutes';
 import VendedorRoutes from './routes/VendedorRoutes';
 import Login from './pages/public/Login';
 import './index.css'
+import TelaDeVendas from './pages/private/telaDeVendas';
 // import Home from './pages/public/Home';
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         {/* Rotas públicas */}
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path='/login' element={<Login />} />
+        <Route path='/login' element={<TelaDeVendas />} />
         <Route path="/unauthorized" element={<h1>Acesso não autorizado</h1>} />
 
         {/* Redirecionamento padrão para login se não autenticado */}
