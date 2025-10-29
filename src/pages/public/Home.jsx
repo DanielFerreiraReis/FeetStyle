@@ -1,11 +1,24 @@
-import { FaShoePrints } from "react-icons/fa";
-import styles from "../../css/Home.module.css";
-import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { FaShoePrints, FaMoon, FaSun } from "react-icons/fa";
+import styles from "../../styles/css/Home.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(true);
+
   return (
-    <div className={styles.homeContainer}>
+    <div className={`${styles.homeContainer} ${darkMode ? styles.dark : styles.light}`}>
       <div className={styles.homeContent}>
+        {/* Botão de alternância do tema */}
+        <button
+          className={styles.toggleButton}
+          onClick={() => setDarkMode(!darkMode)}
+          title="Alternar tema"
+        >
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+
         <div className={styles.logoSection}>
           <FaShoePrints className={styles.logoIcon} />
           <h1 className={styles.homeTitle}>FeetStyle</h1>
@@ -30,10 +43,9 @@ const Home = () => {
           </p>
         </div>
 
-        <Link to="/login">
-            <button className={styles.button}> Navegar no Sistema </button>
-        </Link>
-        
+        <button className={styles.button} onClick={() => navigate("/login")}>
+          Entrar no Sistema
+        </button>
 
         <footer className={styles.footer}>
           © {new Date().getFullYear()} FeetStyle — IFPA Tucuruí

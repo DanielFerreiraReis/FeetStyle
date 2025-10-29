@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Rotas públicas */}
-        <Route path='/Home' element={<Home />} />
+        <Route index element={<Home />} />
         <Route path='/login' element={<Login/>} />
         <Route path="/unauthorized" element={<h1>Acesso não autorizado</h1>} />
 
@@ -25,7 +25,7 @@ function App() {
             isAuthenticated ? (
               userRole === 'admin' ? <Navigate to="/dashboard" /> : <Navigate to="/cadastro" />
             ) : (
-              <Navigate to="/Home" replace />
+              <Navigate to="/login" replace />
             )
           }
         />
