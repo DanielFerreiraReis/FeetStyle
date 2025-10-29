@@ -1,22 +1,27 @@
 import React from "react";
-import BarraSuperior from "../../componentesSelect/PaginaVendas/BarraSuperior";
-import BarraInferior from "../../componentesSelect/PaginaVendas/BarraInferior";
-import ProdutoView from "../../componentesSelect/PaginaVendas/ProdutoView";
-import TabelaItens from "../../componentesSelect/PaginaVendas/TabelaItens";
-import "../../css/TelaVendas.css";
+import BarraSuperior from "../../components/PaginaVendas/BarraSuperior";
+import BarraInferior from "../../components/PaginaVendas/BarraInferior";
+import ProdutoView from "../../components/PaginaVendas/ProdutoView";
+import TabelaItens from "../../components/PaginaVendas/TabelaItens";
+
+import styles from "../../styles/css/TelaVendas.module.css";
 
 const TelaDeVendas = () => {
   return (
-    <div className="tela">
+    <div className={styles.tela}>
       <BarraSuperior />
-      <div className="conteudo">
+
+      <div className={styles.conteudo}>
         <ProdutoView />
-        <TabelaItens />
-        <BarraInferior />
+
+        <div className={styles.secaoDireita}>
+          <TabelaItens />
+        </div>
       </div>
+
+      <BarraInferior />
     </div>
   );
 };
 
 export default TelaDeVendas;
-

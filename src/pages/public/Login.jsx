@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FaCircleUser, FaLock, FaLockOpen } from 'react-icons/fa6';
 import ModalFeedback from '../../components/ModalFeedBack';
-import styles from '../../css/login.module.css';
+import styles from '../../styles/css/login.module.css';
 
 const Login = () => {
   const { login } = useAuth();

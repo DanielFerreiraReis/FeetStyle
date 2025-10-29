@@ -1,0 +1,36 @@
+.container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.container h3 {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.tabela {
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+.tabela th {
+  background-color: #466578;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.vazio {
+  padding: 15px;
+  color: #888;
+}

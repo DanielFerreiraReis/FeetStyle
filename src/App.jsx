@@ -1,10 +1,16 @@
+// import TelaDeVendas from "./pages/private/TelaDeVendas";
+// function App() {
+//   return <TelaDeVendas />;
+// }
+
+// export default App;
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 import AdminRoutes from './routes/AdminRoutes';
 import VendedorRoutes from './routes/VendedorRoutes';
 import Login from './pages/public/Login';
 import './index.css'
-import TelaDeVendas from './pages/private/TelaDeVendas';
 
 
 function App() {
@@ -14,8 +20,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Rotas públicas */}
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/TeladeVendas" element={<TelaDeVendas />} />
+        <Route index element={<Home />} />
+        <Route path='/login' element={<Login/>} />
         <Route path="/unauthorized" element={<h1>Acesso não autorizado</h1>} />
 
         {/* Redirecionamento padrão para login se não autenticado */}
@@ -29,7 +35,7 @@ function App() {
                 <Navigate to="/cadastro" />
               )
             ) : (
-              <Navigate to="/Home" replace />
+              <Navigate to="/login" replace />
             )
           }
         />
