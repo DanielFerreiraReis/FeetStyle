@@ -4,8 +4,8 @@ import AdminRoutes from './routes/AdminRoutes';
 import VendedorRoutes from './routes/VendedorRoutes';
 import Login from './pages/public/Login';
 import './index.css'
-import TelaDeVendas from '../pages/private/telaDeVendas';
-// import Home from './pages/public/Home';
+import TelaDeVendas from './pages/private/TelaDeVendas';
+
 
 function App() {
   const { isAuthenticated, userRole } = useAuth();
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         {/* Rotas públicas */}
         {/* <Route path="/" element={<Home />} /> */}
-        <Route path='/login' element={<Login/>} />
+        <Route path="/TeladeVendas" element={<TelaDeVendas />} />
         <Route path="/unauthorized" element={<h1>Acesso não autorizado</h1>} />
 
         {/* Redirecionamento padrão para login se não autenticado */}
