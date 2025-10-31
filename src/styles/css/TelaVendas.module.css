@@ -1,58 +1,148 @@
-/* TelaDeVendas.module.css */
-
-.tela {
-  width: 100%;
-  height: 100vh;
-  background-color: #054b5a; /* azul escuro do modelo */
+/* TelaDeVendas.module.css - layout geral */
+.page {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: #0f5b60; /* fundo azul esverdeado */
 }
 
-.conteudo {
+/* main central */
+.main {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  gap: 30px;
-}
-
-/* Card da Imagem do Produto */
-.cardImagem {
-  width: 350px;
-  height: 350px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.cardImagem img {
-  width: 100%;
-  height: auto;
-}
-
-/* Seção da direita (inputs e tabela) */
-.secaoDireita {
+  padding: 24px 32px;
   display: flex;
   flex-direction: column;
-  width: 60%;
+  gap: 18px;
 }
 
-/* Título "Itens" */
-.tituloItens {
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 5px;
+/* top area holds the 3 columns: image | inputs | cart/table */
+.topArea {
+  display: grid;
+  grid-template-columns: 360px 1fr 420px; /* left fixed 360, center fluid, right fixed */
+  gap: 24px;
+  align-items: start;
 }
 
-.tabelaItens {
+/* left column (imagem) */
+.leftCol {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* center column (inputs) */
+.centerCol {
+  display: flex;
+  flex-direction: column;
+}
+
+/* right column (tabela + ações) */
+.rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Ações do carrinho (botões) */
+.cartActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* botão pagamento verde e excluir vermelho */
+.btnPayment {
+  background-color: #1db64b;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnDelete {
+  background-color: #f04b4b;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 28px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* responsividade básica */
+@media (max-width: 1100px) {
+  .topArea {
+    grid-template-columns: 1fr;
+  }
+  .rightCol {
+    order: 3;
+  }
+  .leftCol, .centerCol {
+    width: 100%;
+  }
+}
+.pageContainer {
+  background-color: #063d4e;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  gap: 20px;
   width: 100%;
-  background-color: #ffffff;
-  border-radius: 8px;
-  padding: 10px;
+  padding: 20px;
+  background-color: #044a5f;
+}
+
+/* Área esquerda */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Área direita */
+.rightColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Botões */
+.actionButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.payButton {
+  background-color: #00b46e;
+  border: none;
+  padding: 10px 18px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #d62828;
+  border: none;
+  padding: 10px 18px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .rightColumn {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,69 +1,77 @@
+/* ProdutoInputs.module.css */
 .container {
   width: 100%;
-  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+/* grid de 2 colunas para os campos superiores */
 .gridInputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+  align-items: start;
 }
 
+/* cada bloco com título azul e input branco */
 .campo {
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
+/* "cabeçalho azul" sobre cada input (estética do mockup) */
 .campo label {
-  color: white;
-  font-size: 14px;
-  margin-bottom: 3px;
+  background: #063b6a;
+  color: #fff;
+  padding: 8px 10px;
+  font-weight: 700;
+  border-radius: 4px 4px 0 0;
 }
 
+/* input com borda e fundo branco, ligado ao label */
 .campo input {
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 8px;
-  border: none;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  background: #fff;
   font-size: 14px;
 }
 
-/* Botão adicionar */
-.btnCarrinho {
+/* input desabilitado estilo mais claro */
+.campo input:disabled {
+  background: #f6f6f6;
+  color: #333;
+}
+
+/* campo de quantidade e codigo ocupam linha cheia (abaixo da grid) */
+.container > .campo:nth-last-child(3),
+.container > .campo:nth-last-child(2) {
   width: 100%;
-  margin-top: 10px;
+}
+
+/* botão adicionar ao carrinho */
+.btnCarrinho {
+  margin-top: 6px;
   padding: 12px;
   background-color: #21a637;
-  color: white;
-  font-size: 16px;
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .btnCarrinho:disabled {
-  background-color: #6c6c6c;
+  background-color: #7b7b7b;
   cursor: not-allowed;
 }
 
-/* Modal de aviso */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modalBox {
-  background: #fff;
-  padding: 20px 40px;
-  border-radius: 10px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
+/* espaçamento em telas pequenas */
+@media (max-width: 600px) {
+  .gridInputs {
+    grid-template-columns: 1fr;
+  }
 }
