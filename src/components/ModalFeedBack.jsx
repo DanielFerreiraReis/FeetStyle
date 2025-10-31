@@ -1,4 +1,4 @@
-import styles from '../styles/css/ModalFeedback.module.css';
+import styles from '../styles/ModalFeedback.module.css';
 
 const ModalFeedback = ({ message, onClose }) => {
   if (!message) return null;

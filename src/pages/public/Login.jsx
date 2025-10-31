@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FaCircleUser, FaLock, FaLockOpen } from 'react-icons/fa6';
 import ModalFeedback from '../../components/ModalFeedBack';
-import styles from '../../styles/css/login.module.css';
+import styles from '../../styles/login.module.css';
 
 const Login = () => {
   const { login } = useAuth();
@@ -25,6 +25,7 @@ const Login = () => {
     }
 
     try {
+      //espera resposta de localhost Xampp: http://localhost/BackEndLojaDeSapatos/src/api/login.php
       const response = await fetch('http://localhost/BackEndLojaDeSapatos/src/api/login.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

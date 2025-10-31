@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     border: black 2px solid;
-    background: url(../../assets/images/logTelaDeFundo.png);
+    background: url(../../assets/images/global/logTelaDeFundo.png);
     /* background: url(fundo2.png); */
     background-size: cover;
     background-position: center;
