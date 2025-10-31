@@ -25,17 +25,28 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://localhost/seu-caminho/login.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user, senha }),
+      const response = await fetch('http://localhost/BackEndLojaDeSapatos/src/api/login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user, senha }),
       });
 
       const data = await response.json();
+      console.log(data);
 
       if (response.ok && data.success) {
         login(data.role);
-        navigate(data.role === 'admin' ? '/dashboard' : '/cadastro');
+        switch (data.role) {
+          case 'admin':
+            navigate('/dashboard');
+            break;
+          case 'vendedor':
+            navigate('/TelaDeVendas')
+            break;
+          default: 
+            setModalMessage('cargo não reconhecido');
+            break;
+        }
       } else {
         setModalMessage(data.message || 'Usuário ou senha inválidos');
       }
