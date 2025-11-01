@@ -1,11 +1,15 @@
 import React from "react";
-import styles from "./BarraSuperior.module.css";
+import styles from "../../styles/telaVendasCSS/BarraSuperior.module.css";
 
-const BarraSuperior = () => {
+const BarraSuperior = ({ onVoltar }) => {
   return (
     <header className={styles.container}>
-      <img src=".." alt="Logo" className={styles.logo} />
-      <button className={styles.botaoVoltar}>Voltar</button>
+      <div className={styles.logo}>
+        <h1>Sistema de Vendas</h1>
+      </div>
+      <button className={styles.botaoVoltar} onClick={onVoltar}>
+        Voltar
+      </button>
     </header>
   );
 };
