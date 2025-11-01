@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaShoePrints, FaMoon, FaSun } from "react-icons/fa";
-import styles from "../../styles/css/Home.module.css";
+import styles from "../../styles/Home.module.css";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

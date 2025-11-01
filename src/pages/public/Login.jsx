@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { FaCircleUser, FaLock, FaLockOpen } from 'react-icons/fa6';
 import ModalFeedback from '../../components/ModalFeedBack';
-import styles from '../../styles/css/login.module.css';
+import styles from '../../styles/login.module.css';
 
 const Login = () => {
   const { login } = useAuth();
@@ -25,17 +25,29 @@ const Login = () => {
     }
 
     try {
-      const response = await fetch('http://localhost/seu-caminho/login.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user, senha }),
+      //espera resposta de localhost Xampp: http://localhost/BackEndLojaDeSapatos/src/api/login.php
+      const response = await fetch('http://localhost/BackEndLojaDeSapatos/src/api/login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user, senha }),
       });
 
       const data = await response.json();
+      console.log(data);
 
       if (response.ok && data.success) {
         login(data.role);
-        navigate(data.role === 'admin' ? '/dashboard' : '/cadastro');
+        switch (data.role) {
+          case 'admin':
+            navigate('/dashboard');
+            break;
+          case 'vendedor':
+            navigate('/TelaDeVendas')
+            break;
+          default: 
+            setModalMessage('cargo não reconhecido');
+            break;
+        }
       } else {
         setModalMessage(data.message || 'Usuário ou senha inválidos');
       }
